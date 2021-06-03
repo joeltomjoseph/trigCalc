@@ -50,10 +50,24 @@ elif answer1 == "3":
     answer2 = input("\nWhat angle + side combination do you have?\n\n1. Angle + Opposite\n2. Angle + Hypotenuse\n\n")
 
     if answer2 == "1":
-        pass
+        angleQ, opp = input("\nWhat is your angle (FIRST VALUE) and your Opposite length (SECOND VALUE) SEPERATED BY A COMMA\nlike 62, 7.4\n\n").split(", ")
+        adj = float(opp)/math.tan(math.radians(float(angleQ)))
+        print("The length of the Adjacent is", adj)
 
     elif answer2 == "2":
-        pass
+        angleQ, hyp = input("\nWhat is your angle (FIRST VALUE) and your Hypotenuse length (SECOND VALUE) SEPERATED BY A COMMA\nlike 62, 7.4\n\n").split(", ")
+        adj = hyp*math.cos(math.radians(float(angleQ)))
+        print("The length of the Adjacent is", adj)
 
 elif answer1 == "4":
-    pass
+    answer2 = input("\nWhat angle + side combination do you have?\n\n1. Angle + Hypothenuse\n2. Angle + Adjacent\n\n")
+
+    if answer2 == "1":
+        angleQ, hyp = input("\nWhat is your angle (FIRST VALUE) and your Hypotenuse length (SECOND VALUE) SEPERATED BY A COMMA\nlike 62, 7.4\n\n").split(", ")
+        opp = hyp*math.sin(math.radians(float(angleQ)))
+        print("The length of the Opposite is", opp)
+
+    elif answer2 == "2":
+        angleQ, adj = input("\nWhat is your angle (FIRST VALUE) and your Adjacent length (SECOND VALUE) SEPERATED BY A COMMA\nlike 62, 7.4\n\n").split(", ")
+        opp = adj*math.tan(math.radians(float(angleQ)))
+        print("The length of the Opposite is", opp)
